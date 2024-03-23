@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # Copy custom index.html to the appropriate location in the container
-COPY index.html /usr/share/nginx/html/index.html
+COPY index.html 
 
 # Expose port 80
 EXPOSE 80
