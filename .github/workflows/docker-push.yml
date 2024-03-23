@@ -21,7 +21,7 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push anandriasyan/exam_devops:tagname
+        docker push anandriasyan/anahit-docker-nginxinstall:1711201629
 
 
 
