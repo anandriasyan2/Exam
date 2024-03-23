@@ -18,7 +18,7 @@ jobs:
 
       - name: Build Custom Docker Image
         run: |
-          docker build -t anandriasyan/custom-nginx-image:latest  .github/workflows
+          docker build -t anandriasyan/custom-nginx-image:latest  Exam/.github/workflows/
           docker images
 
 
