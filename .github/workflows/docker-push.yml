@@ -1,0 +1,22 @@
+name: Push Docker Image to Docker Hub
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.anandriasyan }}
+        password: ${{ secrets.094947044cC. }}
+
+    - name: Push Docker image to Docker Hub
+      run: docker push anandriasyan/nginx-custom:latest
