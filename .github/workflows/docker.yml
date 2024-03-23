@@ -16,4 +16,4 @@ jobs:
       run: docker pull nginx:alpine
 
     - name: Build Custom Image
-      run: docker build -t anandriasyan2/my-custom-image:latest .
+      run: docker build -t anandriasyan2/my-custom-image:latest . .github/workflows
