@@ -1,24 +1,18 @@
-name: Build Custom Docker Image
+name: Docker Image CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Pull Nginx Image
-        run: docker pull nginx:alpine
-
-      - name: Build Custom Docker Image
-        run: |
-          docker build -t anandriasyan/custom-nginx-image:latest  Exam/.github/workflows/
-          docker images
-
-
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag anahit-docker-nginx:$(date +%s)
