@@ -1,8 +1,9 @@
-name: Push Docker Image to Docker Hub
+name: Push Docker Image
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   push:
@@ -19,5 +20,8 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Push Docker image to Docker Hub
-      run: docker push anandriasyan/nginx-custom:latest
+      run: |
+        docker push anandriasyan/exam_devops:tagname
+
+
 
