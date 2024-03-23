@@ -1,3 +1,18 @@
-FROM nginx:alpine
-LABEL owner="Anahit"
-ENV test=test
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker Image
+        run: |
+          docker build -t anandriasyan/exam_devops:tagname .
