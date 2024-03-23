@@ -21,4 +21,29 @@ jobs:
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag anandriasyan/exam_devops
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Pull Nginx Image
+      run: docker pull nginx:alpine
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag anandriasyan/exam_devops
+
+    - name: Push Docker image to Docker Hub
+      run: docker push anandriasyan/exam_devops
 
