@@ -15,8 +15,9 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: ${{ secrets.anandriasyan }}
-        password: ${{ secrets.094947044cC. }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Push Docker image to Docker Hub
       run: docker push anandriasyan/nginx-custom:latest
+
