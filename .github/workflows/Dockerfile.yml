@@ -1,4 +1,5 @@
 name: Build Docker Image
+
 on:
   push:
     branches: [ main ]
@@ -15,3 +16,4 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t anandriasyan2/nginx-server:latest -f .github/workflows/Dockerfile.yml .
+
