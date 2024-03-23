@@ -17,10 +17,8 @@ jobs:
       run: docker pull nginx:alpine
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag anandriasyan/exam_devops
+      run: docker build . --file Dockerfile --tag anandriasyan/exam_devops:exam
 
-    - name: Push Docker image to Docker Hub
-      run: docker push anandriasyan/exam_devops
 
 
 
