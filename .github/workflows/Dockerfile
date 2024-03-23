@@ -15,4 +15,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Docker image
-      run: docker build -t anandriasyan2/nginx-server:latest .
+      run: docker build -t anandriasyan2/nginx-server:latest . -f /Exam/.github/workflows .
