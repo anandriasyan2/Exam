@@ -1,0 +1,19 @@
+name: Pull Nginx Image and Build Custom Image
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-custom-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Pull Nginx image
+      run: docker pull nginx:alpine
+
+    - name: Build Custom Image
+      run: docker build -t anandriasyan2/my-custom-image:latest .
